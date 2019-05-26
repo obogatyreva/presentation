@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>React</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>React</h1>
+      </section>
+      <section>
+        <h3 class="fragment highlight-green">Introduction</h3>
+        <p>My name is <strong>Olga Bogatyreva</strong></p>
+        <p>I am a student of <strong>the Rolling Scopes School</strong></p>
+      </section>
+      <section>
+        <h3 class="fragment fade-out">What is React?</h3>
+        <img width="500" height="290" data-src="img\react.jpg" alt="logo">
+      </section>
+      <section>
+        <p><a href="?transition=react#/transitions">React</a> is a JavaScript library for building user
+          interfaces.</p>
+        <ul>
+          <li>It is used for developing complex and interactive web and mobile UI.</li>
+          <li>It is used as a base in the development of single-page or mobile applications.</li>
+          <li>It composed complex UIs from small and isolated pieces of code called <em>“components”</em>.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>History</h3>
+      </section>
+      <section>
+        <p><a href="?transition=react#/transitions"><em>React</em></a> was created by Jordan Walke, a software
+          engineer at
+          Facebook. <a href="?transition=react#/transitions"><em>React</em></a> is influenced by the likes of
+          XHP which
+          is a simple <a href="?transition=html#/transitions"><em>HTML</em></a> component framework for <a
+            href="?transition=php#/transitions"><em>PHP</em></a>.
+          It was first deployed on Facebook's newsfeed in 2011 and later on <a
+            href="Instagram.com"><em>Instagram.com</em></a> in 2012. It was
+          open-sourced at JSConf US in May 2013.</p>
+      </section>
+
+      <section>
+        <h3>The advantages of React</h3>
+      </section>
+      <section>
+        <p>Some of the major advantages of React are:</p>
+        <ul>
+          <li class="fragment grow">SEO-friendly</li>
+          <li class="fragment grow">JSX</li>
+          <li class="fragment grow">Simplicity</li>
+          <li class="fragment grow">UI Test Cases</li>
+        </ul>
+      </section>
+      <section>
+        <p><a href="?transition=react#/transitions">React</a> has a small API, and you have to understand 4
+          concepts to get started:</p>
+        <ol>
+          <li>Components</li>
+          <li>JSX</li>
+          <li>State</li>
+          <li>Props</li>
+        </ol>
+      </section>
+      <section>
+        <section>
+          <h3>Components</h3>
+          <img width="500" height="310" data-src="img\component.jpg" alt="component">
+        </section>
+        <section id="Component">
+          <p><a href="?transition=component#/transitions">Component</a> is a JavaScript class or function that
+            accepts inputs i.e. properties(props)
+            and returns a React element that describes how a section of the UI (User Interface) should
+            appear.</p>
+        </section>
+        <section>
+          <h3>functional component</h3>
+          <pre><code class="hljs" data-trim data-line-numbers="1">
+							function Welcome(props) {
+							  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;
+							}
+						</code></pre>
+        </section>
+        <section>
+          <h3>class component</h3>
+          <pre><code class="hljs" data-trim data-line-numbers="1">
+							class Welcome extends React.Component {
+								render () {
+							  return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+							}
+						}
+						</code></pre>
+        </section>
+        <section>
+          <p><img width="500" height="310" data-src="img\cycle.jpg" alt="lifecycle"></p>
+        </section>
+        <section>
+          <p>A React Component can go through four stages of its life as follows.</p>
+          <p><img width="500" height="310" data-src="img\images.png" alt="life"></p>
+        </section>
+        <section>
+          <p><img width="500" height="310" data-src="img\jsx.jpg" alt="element"></p>
+        </section>
+        <section>
+          <p><a href="?transition=jsx#/transitions">JSX</a> is a JavaScript extension that allows us to define React
+            elements using syntax that looks similar to HTML. In JSX, an element’s type is specified with a tag. The
+            tag’s attributes represent the properties.</p>
+          <pre><code class="hljs" data-trim data-line-numbers="1-2">
+               const name = 'Josh Perez'; 
+               const element = &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+               
+               ReactDOM.render (
+                 element,
+                 document.getElementById('root')
+               );
+            </code></pre>
+        </section>
+        <section>
+          <p><img width="500" height="310" data-src="img\state.png" alt="state"></p>
+        </section>
+        <section>
+          <p><a href="?transition=state#/transitions">State</a> is an object.</p>
+          <p>It is mutable unlike props and creates dynamic and interactive components. it is accessed via <a
+              href="?transition=thisstate#/transitions">this.state().</a>
+            <pre><code class="hljs" data-trim data-line-numbers="4,9">
+                class Clock extends React.Component {
+                  constructor(props) {
+                    super(props);
+                    this.state = {date: new Date()};
+                  render() {
+                    return (
+                      &lt;div&gt;
+                      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+                      &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+                      &lt;/div&gt;
+                    );
+                  }
+                } 
+             </code></pre>
+        </section>
+        <section>
+          <p><img width="500" height="305" data-src="img\props.png" alt="props"></p>
+        </section>
+        <section>
+          <p><a href="?transition=props#/transitions">Props</a> is shorthand for properties. They are read-only
+            components which must
+            be kept pure i.e immutable. They are data passed down from a parent component to a child component.</p>
+          <pre><code class="hljs" data-trim data-line-numbers="1,4-5">
+            const BlogPostExcerpt = props => {
+              return (
+                &lt;div&gt;
+                &lt;h1&gt;{props.title}&lt;/h1&gt;
+                &lt;p&gt;{props.description}&lt;/p&gt;
+                &lt;/div&gt;
+              )
+            }
+          </code></pre>
+        </section>
+      </section>
+      <section>
+        <p><img width="500" height="302" data-src="img\dom.png" alt="dom"></p>
+      </section>
+      <section>
+        <p>In React world, the term <a href="?transition=virtualdom#/transitions">"virtual DOM"</a> is usually
+          associated with React elements.</p>
+      </section>
+      <section>
+        <h3>How Virtual DOM helps <a href="?transition=react#/transitions">React</a>?</h3>
+      </section>
+      <section>
+        <p><a href="?transition=react#/transitions">React</a> maintains two <strong>Virtual DOM</strong> at each
+          time. One contains the updated Virtual DOM and one which is the pre-update version of this updated Virtual
+          DOM.
+          We can compare the pre-update version with the updated Virtual DOM and find out what has changed in the DOM.
+          This process is known as ‘diffing’.
+        </p>
+      </section>
+      <section>
+        <h2>Difference between Real DOM and Virtual DOM</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Real DOM</th>
+              <th>Virtual DOM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>It updates slow.</td>
+              <td>It updates faster.</td>
+            </tr>
+            <tr>
+              <td>Can directly update HTML.</td>
+              <td>Can't directly update HTML.</td>
+            </tr>
+            <tr>
+              <td>Creates a new DOM if element updates.</td>
+              <td>Updates the JSX if element updates.</td>
+            </tr>
+            <tr>
+              <td>DOM manipulation is very expensive.</td>
+              <td>DOM manipulation is very easy.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <p>In conclusion, <a href="?transition=react#/transitions">React</a> is changing step by step.
+          <strong>Hooks</strong> are a new addition in React 16.8. They let you use state and other React features
+          without writing a class.</p>
+      </section>
+      <section>
+        <img width="500" height="280" data-src="img\hooks.png" alt="hooks">
+      </section>
+      <section>
+        <h2>Thank you!</h2>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true }
+      ]
+    });
+  </script>
+</body>
+
+</html>
